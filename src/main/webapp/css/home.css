@@ -1,0 +1,237 @@
+@charset "UTF-8";
+
+body {
+	display: flex;
+	flex-direction: column;
+	font-size: 50px;
+	font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+h1 {
+	text-align: left;
+	margin-top: 5px;
+	margin-left: 10px;
+	margin-bottom: 50px;
+	font-size: 2.3em;
+	font-weight: 9;
+}
+
+.hamburger-menu {
+	display: block;
+	cursor: pointer;
+	position: fixed;
+	top: 35px;
+	right: 10px;
+}
+
+.bar {
+	width: 100px;
+	height: 20px;
+	background-color: #999;
+	margin: 15px 10px;
+}
+
+/* アニメーションの設定 */
+.hamburger-menu.active .bar:nth-child(2) {
+	opacity: 0;
+}
+
+.hamburger-menu.active .bar:nth-child(1) {
+	transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-menu.active .bar:nth-child(3) {
+	transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.close-menu {
+	text-decoration: none;
+	color: inherit;
+	font-size: 100px;
+	width: 100px;
+	height: 100px;
+	margin-bottom: 20px;
+}
+
+.side {
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	top: 0;
+	right: -250px;
+	height: 100%;
+	background-color: #fff;
+	z-index: 100;
+	transition: right 0.3s ease-in-out;
+}
+
+.side.active {
+	right: 0;
+}
+
+.logout-link, .setting-link {
+	display: block;
+	margin: 20px;
+}
+
+.logout-link a, .setting-link a {
+	font-size: 1.2em;
+	color: #000;
+	text-decoration: none;
+}
+
+form {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	margin-left: 30px;
+	margin-right: 30px;
+}
+
+.MyTask {
+	color: #999;
+}
+
+.UserTask {
+	padding: 1.5rem;
+	font-size: 1.2em;
+	font-weight: bold;
+	border: 3px solid black; /* 枠線の設定 */
+	width: 100%; /* 幅の設定 */
+	resize: vertical; /* 垂直方向のリサイズを有効にする */
+	min-height: 2em; /* 最低高さを指定 */
+	max-height: 9em; /* 最大高さを指定 */
+	overflow-y: auto; /* スクロールバーを表示する */
+}
+
+input[type="submit"] {
+	background-color: yellow;
+	color: black;
+	border: 1px solid black;
+	border-radius: 3px;
+	padding: 0.8em 1.3em;
+	cursor: pointer;
+	font-size: 2rem;
+	display: block;
+	margin: 1em 0 1em auto;
+}
+
+/*calender-link -----------------------------------------------------------------*/
+.calendar-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.calendar-open {
+	text-decoration: none;
+	width: 0;
+	height: 0;
+	border-left: 300px solid transparent;
+	border-right: 300px solid transparent;
+	border-top: 50px solid #999;
+}
+
+/*TimeLine -----------------------------------------------------------------*/
+.date-r {
+	display: flex;
+	justify-content: flex-end;
+	align-items: right;
+	font-size: 1.8rem;
+	margin-top: -13%;
+	margin-right: 20px
+}
+
+.time-r {
+	display: flex;
+	justify-content: flex-end;
+	align-items: right;
+	font-size: 2rem;
+	margin-top: -1%;
+	margin-right: 20px
+}
+
+.date-l {
+	display: flex;
+	justify-content: flex-start;
+	align-items: left;
+	font-size: 1.8rem;
+	margin-top: -13%;
+	margin-left: 20px;
+}
+
+.time-l {
+	display: flex;
+	justify-content: flex-start;
+	align-items: left;
+	font-size: 2rem;
+	margin-top: -1%;
+	margin-left: 20px;
+}
+
+/*吹き出し*/
+.balloon_l, .balloon_r {
+	margin: 30px 0px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start; /*縦位置を上揃え*/
+	font-size: 2.5rem;
+}
+
+.timline-task {
+	font-size: 3rem;
+	font-weight: bold;
+}
+
+.balloon_r {
+	justify-content: flex-end;
+}
+
+.faceicon img {
+	width: 130px; /*任意のサイズ*/
+	height: auto;
+}
+
+.balloon_r .faceicon {
+	margin-left: 40px;
+}
+
+.balloon_l .faceicon {
+	margin-right: 40px;
+}
+
+.balloon_r .faceicon {
+	order: 2 !important;
+}
+
+.says {
+	max-width: 90%;
+	width: 80%;
+	display: flex;
+	flex-wrap: wrap;
+	position: relative;
+	padding: 17px 13px 15px 18px;
+	border-radius: 12px;
+	background: yellow; /*色は任意*/
+	box-sizing: border-box;
+	margin: 0 !important;
+	line-height: 1.5;
+	resize: vertical; /* 垂直方向のリサイズを有効にする */
+	height: 6em; /* 最低高さを指定 */
+	overflow-y: auto; /* スクロールバーを表示する */
+	overflow-x: hidden; /* 水平方向のスクロールバーを非表示にする */
+	
+}
+
+.balloon_l .says {
+	background: #99dddd;
+}
+
+.says p {
+	margin: 8px 0 0 !important;
+}
+
+.says p:first-child {
+	margin-top: 0 !important;
+}
+

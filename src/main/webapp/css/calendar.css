@@ -1,0 +1,211 @@
+@charset "UTF-8";
+
+body {
+	display: flex;
+	flex-direction: column;
+	font-size: 50px;
+	font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+h1 {
+	text-align: left;
+	margin-top: 5px;
+	margin-left: 10px;
+	margin-bottom: 50px;
+	font-size: 2.3em;
+	font-weight: 9;
+}
+
+.hamburger-menu {
+	display: block;
+	cursor: pointer;
+	position: fixed;
+	top: 35px;
+	right: 10px;
+}
+
+.bar {
+	width: 100px;
+	height: 20px;
+	background-color: #999;
+	margin: 15px 10px;
+}
+
+/* アニメーションの設定 */
+.hamburger-menu.active .bar:nth-child(2) {
+	opacity: 0;
+}
+
+.hamburger-menu.active .bar:nth-child(1) {
+	transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-menu.active .bar:nth-child(3) {
+	transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.close-menu {
+	text-decoration: none;
+	color: inherit;
+	font-size: 100px;
+	width: 100px;
+	height: 100px;
+	margin-bottom: 20px;
+}
+
+.side {
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	top: 0;
+	right: -250px;
+	height: 100%;
+	background-color: #fff;
+	z-index: 100;
+	transition: right 0.3s ease-in-out;
+}
+
+.side.active {
+	right: 0;
+}
+
+.logout-link, .setting-link {
+	display: block;
+	margin: 20px;
+}
+
+.logout-link a, .setting-link a {
+	font-size: 1.2em;
+	color: #000;
+	text-decoration: none;
+}
+
+form {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	margin-left: 30px;
+	margin-right: 30px;
+}
+
+.MyTask {
+	color: #999;
+}
+
+.UserTask {
+	padding: 1.5rem;
+	font-size: 1.2em;
+	font-weight: bold;
+	border: 3px solid black; /* 枠線の設定 */
+	width: 100%; /* 幅の設定 */
+	resize: vertical; /* 垂直方向のリサイズを有効にする */
+	min-height: 2em; /* 最低高さを指定 */
+	max-height: 9em; /* 最大高さを指定 */
+	overflow-y: auto; /* スクロールバーを表示する */
+}
+
+input[type="submit"] {
+	background-color: yellow;
+	color: black;
+	border: 1px solid black;
+	border-radius: 3px;
+	padding: 0.8em 1.3em;
+	cursor: pointer;
+	font-size: 2rem;
+	display: block;
+	margin: 1em 0 1em auto;
+}
+
+/*calender-link -----------------------------------------------------------------*/
+.Home-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.Home-open {
+	text-decoration: none;
+	width: 0;
+	height: 0;
+	border-left: 300px solid transparent;
+	border-right: 300px solid transparent;
+	border-bottom: 50px solid #999;
+}
+
+/*calendar -----------------------------------------------------------------*/
+#container {
+	width: 1000px;
+	min-height: 100vh;
+	margin: 0 auto;
+	padding: 20px 0 40px;
+}
+
+#container h3 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#container p {
+	display: flex;
+	width: 90%;
+	margin: 0 auto 20px;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#container p a {
+	margin:50px;
+	
+}
+
+.next-month {
+	width: 0;
+	height: 0;
+	border-top: 50px solid transparent;
+	border-right: 50px solid #999;
+	border-bottom: 50px solid transparent;
+}
+
+.past-month {
+	width: 0;
+	height: 0;
+	border-left: 50px solid #999;
+	border-top: 50px solid transparent;
+	border-bottom: 50px solid transparent;
+}
+
+table {
+	width: 90%;
+	margin: 20px auto 0;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+td, th {
+	border: 5px solid black;
+	text-align: center;
+	background-color: #ffffff;
+	font-size: 50px;
+	padding: 3px 0;
+}
+
+td {
+	padding: 15px 0;
+}
+
+th {
+	background-color: #99dddd;
+}
+
+tr *:first-child {
+	color: red;
+}
+
+tr *:last-child {
+	color:  blue;
+}
+
+td.today {
+	background: yellow;
+}
